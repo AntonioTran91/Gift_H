@@ -11,31 +11,42 @@
  
     <style>
         html,
+        html,
         body {
             height: 100%;
             padding: 0;
             margin: 0;
-            background: #000;
+            background: #000; /* Màu nền mặc định */
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
+        
         .box {
-            width: 100%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            flex-direction: column;
+            position: relative;
+            width: 500px; /* Đảm bảo kích thước giống với canvas */
+            height: 500px; /* Đảm bảo kích thước giống với canvas */
         }
-
+        
         canvas {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
         }
+        
+        #heart-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Đảm bảo ảnh lấp đầy trái tim */
+            clip-path: circle(50%); /* Cắt ảnh theo hình tròn nếu cần */
+            z-index: 1; /* Đặt ảnh ở trên canvas */
+            pointer-events: none; /* Ngăn người dùng tương tác với ảnh */
+        }        
 
         #pinkboard {
             position: relative;
@@ -84,35 +95,6 @@
             }
         }
     </style>
-    <style>
-        html,
-        body {
-            height: 100%;
-            padding: 0;
-            margin: 0;
-            background: url('./img/Huongyeuoi.jpg') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    
-        .box {
-            width: 100%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            flex-direction: column;
-        }
-    
-        canvas {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
 </HEAD>
  
 <BODY>
@@ -121,7 +103,7 @@
       </audio>
     <div class="box">
         <canvas id="pinkboard"></canvas>
-        <img id="heart-image" src="img/Huongyeuoi.jpg" alt="Heart Image" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px; border-radius: 50%;">
+    <img id="heart-image" src="img/Huongyeuoi.jpg" alt="Heart Image" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px; border-radius: 50%;">
     </div>
     <script>
         /*
