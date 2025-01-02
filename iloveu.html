@@ -45,7 +45,7 @@
             height: 100%;
             object-fit: cover; /* Đảm bảo ảnh lấp đầy trái tim */
             clip-path: circle(50%); /* Cắt ảnh theo hình tròn nếu cần */
-            z-index: 1; /* Đặt ảnh ở trên canvas */
+            z-index: 0; /* Đặt ảnh ở trên canvas */
             pointer-events: none; /* Ngăn người dùng tương tác với ảnh */
         }        
 
@@ -103,9 +103,9 @@
         <source src="sound/apt.mp3" type="audio/mpeg">
       </audio>
       <div class="box">
-        <img id="heart-image" src="./img/Huongyeuoi.jpg" alt="Heart Image">
+        <img id="heart-background" src="./img/Huongyeuoi.jpg" alt="Heart Background">
         <canvas id="pinkboard"></canvas>
-    </div>    
+    </div>     
     <script>
         /*
          * Settings
