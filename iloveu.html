@@ -24,8 +24,8 @@
         
         .box {
             position: relative;
-            width: 500px; /* Đảm bảo kích thước giống với canvas */
-            height: 500px; /* Đảm bảo kích thước giống với canvas */
+            width: 500px; /* Kích thước tương ứng canvas */
+            height: 500px;
         }
         
         canvas {
@@ -34,20 +34,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1;
+            z-index: 1; /* Canvas nằm trên cùng */
         }
         
-        #heart-image {
+        #heart-background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Đảm bảo ảnh lấp đầy trái tim */
-            clip-path: circle(50%); /* Cắt ảnh theo hình tròn nếu cần */
-            z-index: 0; /* Đặt ảnh ở trên canvas */
-            pointer-events: none; /* Ngăn người dùng tương tác với ảnh */
-        }        
+            object-fit: cover; /* Đảm bảo ảnh bao trọn canvas */
+            z-index: 0; /* Ảnh nằm dưới canvas */
+        }
 
         #pinkboard {
             position: relative;
